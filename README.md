@@ -20,9 +20,8 @@ This is a **beautiful animated notification page** built with **Next.js, Framer 
  ┣ 📂 public  
  ┃ ┗ 📄 Vector.svg   # The bell icon SVG  
  ┣ 📂 app  
- ┃ ┗ 📄 NotificationPage.tsx  # Main component  
+ ┃ ┗ 📄 Page.js  # Main component  
  ┣ 📄 global.css  # Styles  
- ┣ 📄 sw.js  # Service Worker file  
  ┗ 📄 README.md  # This file  
 ```
 
