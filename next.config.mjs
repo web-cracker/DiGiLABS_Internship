@@ -1,10 +1,10 @@
 import withPWA from "next-pwa";
 
-const nextConfig = withPWA({
-  reactStrictMode: true, // ✅ Correct placement
+const nextConfig = {
+  reactStrictMode: true, // ✅ Move this outside PWA
   pwa: {
     dest: "public",
   },
-});
+};
 
-export default nextConfig;
+export default withPWA(nextConfig);
