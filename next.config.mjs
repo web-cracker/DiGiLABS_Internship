@@ -1,8 +1,12 @@
 import withPWA from "next-pwa";
 
-const nextConfig = withPWA({
+const withPWA = require("next-pwa")({
   dest: "public",
-  reactStrictMode: true,
 });
+
+export default withPWA({
+  reactStrictMode: true, // ✅ Move it outside the PWA config
+});
+
 
 export default nextConfig;
