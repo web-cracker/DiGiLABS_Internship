@@ -1,0 +1,92 @@
+/* Global Styles for Notification Page */
+
+body {
+  background: linear-gradient(to bottom, #100F1E, #070713);
+  color: white;
+  font-family: sans-serif;
+}
+
+.notification-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 1rem;
+}
+
+.notification-box {
+  text-align: center;
+}
+
+.notification-bell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 10rem;
+  margin: 0 auto;
+  background: #181837;
+  border-radius: 50%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Glowing Rings */
+.notification-bell::before,
+.notification-bell::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(128, 0, 128, 0.5);
+  animation: pulse 2s infinite;
+}
+
+.notification-bell::before {
+  width: 12rem;
+  height: 12rem;
+  opacity: 0.3;
+}
+
+.notification-bell::after {
+  width: 14rem;
+  height: 14rem;
+  opacity: 0.2;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+
+/* Button Styles */
+.notification-btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #a855f7;
+  border-radius: 8px;
+  color: #a855f7;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.notification-btn:hover {
+  background: #a855f7;
+  color: black;
+  transform: scale(1.05);
+}
+
+.notification-btn:active {
+  transform: scale(0.95);
+}
