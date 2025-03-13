@@ -8,25 +8,33 @@ export default function NotificationPage() {
 
   useEffect(() => {
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js").catch(console.error);
+      navigator.serviceWorker
+        .register("/sw.js")
+        .then(reg => console.log("Service Worker Registered!", reg))
+        .catch(err => console.error("Service Worker Registration Failed", err));
     }
   }, []);
+  
+  
 
   const sendNotification = async () => {
     if (!("Notification" in window)) {
       alert("This browser does not support notifications.");
       return;
     }
-
+  
     if (Notification.permission === "granted") {
       new Notification("Hello!", { body: "You clicked the button!" });
-    } else if (Notification.permission !== "denied") {
+    } else if (Notification.permission === "default") {
       const permission = await Notification.requestPermission();
       if (permission === "granted") {
         new Notification("Hello!", { body: "You clicked the button!" });
       }
+    } else {
+      alert("You have blocked notifications. Please enable them in browser settings.");
     }
   };
+  
 
   return (
     <div className="notification-container">
